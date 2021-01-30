@@ -39,7 +39,7 @@
         </div>
 
 
-        <div class="booking-form">
+        <div id="booking-area" class="booking-form">
             <h3>Book Ocean Time</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
@@ -62,7 +62,7 @@
             <div class="input-group f-class">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <input id="first-class-ticket" class="inp-style inp-width" type="number" name="" value="0">
+                    <input id="first-class-ticket" class="inp-style inp-width" name="" value="0">
                 </div>
                 <div class="button">
                     <button id="first-class-increase" class="btn btn-default"><i class="fas fa-plus"></i></button>
@@ -73,7 +73,7 @@
             <div class="input-group f-class">
                 <div>
                     <label for="">Economy ($100)</label>
-                    <input id="economy-ticket" class="inp-style inp-width" type="number" name="" value="0">
+                    <input id="economy-ticket" class="inp-style inp-width" name="" value="0">
                 </div>
                 <div class="button">
                     <button id="economy-increase" class="btn btn-default"><i class="fas fa-plus"></i></button>
@@ -108,12 +108,21 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="booked" class="btn-style">Book Now</button>
+        </div>
+        <div id="receipt-area">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Booking Successfully done</h5>
+                    <p class="card-text">Your seat has been booked.Thank you for staying with us.Visit our page to get
+                        more updates.</p>
+                    <a href="#" class="btn btn-success">Visit Our Page</a>
+                </div>
+            </div>
         </div>
     </main>
     <script>
         function handleTicketCost(ticketName, isIncrease) {
-            //const ticket = document.getElementById(ticketName);
             const ticketCount = getInput(ticketName)
             let ticketNewCount = ticketCount;
             if (isIncrease == true && ticketCount >= 0) {
@@ -133,7 +142,6 @@
             else if (ticketName == "economy-ticket") {
                 totalCost = ticketNewCount * 100;
             }
-            //console.log(totalCost);
             calculateSubTotal()
         }
         document.getElementById('first-class-increase').addEventListener('click', function () {
@@ -163,6 +171,10 @@
             const ticketInputCount = parseInt(ticketInput.value);
             return ticketInputCount;
         }
+        document.getElementById('booked').addEventListener('click', function () {
+            document.getElementById('booking-area').style.display = 'none';
+            document.getElementById('receipt-area').style.display = 'block';
+        })
     </script>
 </body>
 

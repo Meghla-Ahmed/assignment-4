@@ -57,6 +57,7 @@ nav ul li a:hover, a.active{
     font-weight: 500;
 }
 .booking-form{
+    
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 10px;
@@ -126,4 +127,19 @@ nav ul li a:hover, a.active{
 .amount{
     display: flex;
     justify-content: space-between;
+}
+#receipt-area{
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    float: right;
+    width: 65%;
+    margin-left: 180px;
+}
+.card-title{
+    text-align: center;
+    color: green;
+    font-size: 30px;
 }
